@@ -9,9 +9,9 @@ var operatorDisplay = document.getElementById('operatorDisplay');
 
 function num(btn){
     mainNumber = String(mainNumber);
-    if(mainNumber.length < 12){
+    if(mainNumber.length < 8){
         mainNumber += String(btn.innerHTML);
-        updateDisplay(checkNumberOverflow(mainNumber, 12));
+        updateDisplay(checkNumberOverflow(mainNumber, 8));
     }
 }
 
@@ -29,7 +29,7 @@ function opp(btn){
         if(bufforNumber != ""){
             var result = calc(bufforNumber, mainNumber, bufforOperator);
             mainNumber = result;
-            updateDisplay(checkNumberOverflow(result, 12));
+            updateDisplay(checkNumberOverflow(result, 8));
             updateOperatorDisplay("");
 
         }else{
