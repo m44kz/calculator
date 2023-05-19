@@ -74,8 +74,20 @@ footer > a{
     background-color: rgb(59, 58, 58);
 }
 
-#display, #subDisplay{
+#display, #botDisplay{
     height: 50%;
+}
+
+#operatorDisplay{
+    background-color: rgb(26, 26, 26);
+    width: 20%;
+    float: left;
+    text-align: center;
+    border-radius: 0px 30px 0px 0px;
+}
+#subDisplay{
+    width: 70%;
+    float: right;
 }
 
 /* animations */

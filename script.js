@@ -5,10 +5,13 @@ var bufforOperator = "";
 
 var display = document.getElementById('display');
 var subDisplay = document.getElementById('subDisplay');
+var operatorDisplay = document.getElementById('operatorDisplay');
 
 function num(btn){
+    if(mainNumber.length < 12){
     mainNumber += String(btn.innerHTML);
     updateDisplay(mainNumber);
+    }
 }
 
 function opp(btn){
@@ -26,6 +29,7 @@ function opp(btn){
             var result = calc(bufforNumber, mainNumber, bufforOperator);
             mainNumber = result;
             updateDisplay(result);
+            updateOperatorDisplay("");
 
         }else{
             updateDisplay("ERROR")
@@ -34,8 +38,10 @@ function opp(btn){
     }else if(operator == "C"){
         mainNumber = "";
         bufforNumber = "";
-        updateSubDisplay(bufforNumber)
+        operatorBuffor = "";
+        updateSubDisplay(bufforNumber);
         updateDisplay(mainNumber);
+        updateOperatorDisplay(operatorBuffor);
 
     }else if(operator == "CE"){
         mainNumber = "";
@@ -48,9 +54,9 @@ function opp(btn){
     }else{
         bufforNumber = Number(mainNumber);
         mainNumber = "";
+        updateOperatorDisplay(bufforOperator);
         updateDisplay(mainNumber);
         updateSubDisplay(bufforNumber);
-
     }
 
 }
@@ -72,7 +78,7 @@ function calc(_a, _b , _operator){
             return a - b;
             break;
         
-        case 'X':
+        case 'x':
             return a * b;
             break;
 
@@ -83,12 +89,25 @@ function calc(_a, _b , _operator){
 
 }
 
+function lenghtOverflow(number, limit, expectedLenght){
+    if(number.length > limit){
+        number = String(number);
+        number = Number(number.substr(0, expectedLenght));
+    }
+}
+
+///Update Functions
+
 function updateDisplay(newDisplay){
     display.innerHTML = newDisplay;
 }
 
 function updateSubDisplay(newDisplay){
     subDisplay.innerHTML = newDisplay;
+}
+
+function updateOperatorDisplay(newDisplay){
+    operatorDisplay.innerHTML = newDisplay;
 }
 
 console.log(mainNumber);
