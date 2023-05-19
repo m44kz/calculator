@@ -1,6 +1,22 @@
 body{
     margin: 0;
-    background-color: black;
+    background-color: rgba(102, 107, 121, 1);
+    width: 100%;
+    float: right;
+}
+
+footer{
+    position: absolute;
+    height: 5%;
+    width: 100%;
+    bottom: 0;
+
+    text-align: center;
+    background-color: rgb(48, 48, 48);
+}
+
+footer > a{
+    color: rgb(155, 155, 155);
 }
 
 
@@ -28,6 +44,7 @@ body{
     font-size: 200%;
     height: 32%;
     width: 100%;
+    background-color: rgb(41, 40, 40);
 }
 
 .keypad{
@@ -40,11 +57,12 @@ body{
 }
 
 .numbtn, .oppbtn{
+    font-family: Arial, Helvetica, sans-serif;
     float: left;
     width: 25%;
     height: 20%;
     text-align: center;
-    color: yellow;
+    color: white;
     font-size: x-large;
 }
 
@@ -58,4 +76,19 @@ body{
 
 #display, #subDisplay{
     height: 50%;
+}
+
+/* animations */
+
+button{
+    cursor: pointer;
+    transition: font-size 70ms ease;
+}
+
+button:hover{
+    font-size: xx-large;
+}
+
+button:active{
+    font-size: x-large;
 }
