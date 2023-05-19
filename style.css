@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    background-color: black;
+}
+
+
+.content{
+    color:white;
+    font-size: xx-large;
+    
+    border: solid 5px white;
+    background-color: rgb(41, 40, 40);
+
+    width: 400px;
+    aspect-ratio: 6/7;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.upperbar{
+    background-color: rgb(27, 27, 27);
+    padding: 1%;
+}
+
+.display{
+    float: right;
+    text-align: right;
+    font-size: 200%;
+    height: 32%;
+    width: 100%;
+}
+
+.keypad{
+    background-color: rgb(41, 40, 40);
+    height: auto;
+    width: 100%;
+    height: 58%;
+    float: right;
+    /* margin-top: 19%; */
+}
+
+.numbtn, .oppbtn{
+    float: left;
+    width: 25%;
+    height: 20%;
+    text-align: center;
+    color: yellow;
+    font-size: x-large;
+}
+
+.numbtn{
+    background-color: rgb(29, 28, 28);
+}
+
+.oppbtn{
+    background-color: rgb(59, 58, 58);
+}
+
+#display, #subDisplay{
+    height: 50%;
+}
