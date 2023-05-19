@@ -8,9 +8,10 @@ var subDisplay = document.getElementById('subDisplay');
 var operatorDisplay = document.getElementById('operatorDisplay');
 
 function num(btn){
+    mainNumber = String(mainNumber);
     if(mainNumber.length < 12){
-    mainNumber += String(btn.innerHTML);
-    updateDisplay(mainNumber);
+        mainNumber += String(btn.innerHTML);
+        updateDisplay(mainNumber);
     }
 }
 
@@ -87,13 +88,6 @@ function calc(_a, _b , _operator){
             break;
     }
 
-}
-
-function lenghtOverflow(number, limit, expectedLenght){
-    if(number.length > limit){
-        number = String(number);
-        number = Number(number.substr(0, expectedLenght));
-    }
 }
 
 ///Update Functions
