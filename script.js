@@ -11,7 +11,7 @@ function num(btn){
     mainNumber = String(mainNumber);
     if(mainNumber.length < 12){
         mainNumber += String(btn.innerHTML);
-        updateDisplay(mainNumber);
+        updateDisplay(checkNumberOverflow(mainNumber, 12));
     }
 }
 
@@ -29,12 +29,11 @@ function opp(btn){
         if(bufforNumber != ""){
             var result = calc(bufforNumber, mainNumber, bufforOperator);
             mainNumber = result;
-            updateDisplay(result);
+            updateDisplay(checkNumberOverflow(result, 12));
             updateOperatorDisplay("");
 
         }else{
             updateDisplay("ERROR")
-
         }
     }else if(operator == "C"){
         mainNumber = "";
@@ -53,11 +52,15 @@ function opp(btn){
         updateDisplay(mainNumber);
 
     }else{
+        if(mainNumber != ""){
         bufforNumber = Number(mainNumber);
         mainNumber = "";
+
+        }
         updateOperatorDisplay(bufforOperator);
         updateDisplay(mainNumber);
         updateSubDisplay(bufforNumber);
+
     }
 
 }
@@ -89,6 +92,17 @@ function calc(_a, _b , _operator){
     }
 
 }
+
+function checkNumberOverflow(number, limitLenght){
+    number = String(number);
+    if(number.length > limitLenght){
+        mainNumber = "";
+        return "Too Large";
+    }else{
+        return number;
+    }
+}
+
 
 ///Update Functions
 
